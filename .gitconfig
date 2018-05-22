@@ -1,0 +1,12 @@
+[alias]
+	lg = log -10 --graph --pretty=format:\"%Cgreen%h %Cred%d%n %ad - %an - %C(yellow)%s\"
+	ss = status
+	co = checkout
+	sta = stash
+	cm = commit
+	alias = config --global --get-regexp alias
+	updateSubmodule = submodule foreach --recursive git submodule update
+	st = stash
+	diffc = diff --cached
+	s = status
+	p = pull
