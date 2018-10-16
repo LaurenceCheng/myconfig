@@ -10,3 +10,4 @@
 	diffc = diff --cached
 	s = status
 	p = pull
+	br = branch -vv
