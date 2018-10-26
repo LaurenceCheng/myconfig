@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Assert False</Title>
+			<Shortcut>asf</Shortcut>
+			<Description>Code snippet for ASSERT_FALSE()</Description>
+			<Author>Laurence</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>expression</ID>
+					<Default>actual</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="cpp"><![CDATA[ASSERT_FALSE($expression$);$end$ 
+]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
