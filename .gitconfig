@@ -1,3 +1,6 @@
+[core]
+        autocrlf = true
+        editor = vim
 [alias]
 	lg = log -10 --graph --pretty=format:\"%Cgreen%h %Cred%d%n %ad - %an - %C(yellow)%s\"
 	ss = status
