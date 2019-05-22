@@ -7,6 +7,12 @@
 - Introduce Parameter - `Alt + Shift + P`
 - Convert Local Variable to Field - `Alt + Shift + F`
 
+## Useful Quick Assists
+
+| Name            | Code Example                       | Invocation Location               |
+|-----------------|------------------------------------|-----------------------------------|
+| Pick out string | "abcdefgh" -> "abc" + "de" + "fgh" | select a part of a string literal |
+
 ## Configurations
 
 ### Modify trigger for `Content Assist`.
