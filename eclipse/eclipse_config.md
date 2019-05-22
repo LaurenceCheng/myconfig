@@ -1,5 +1,12 @@
 # Eclipse Slightly Extreme Speed Developing
 
+## Hotkeys
+
+### Added by myself
+
+- Introduce Parameter - `Alt + Shift + P`
+- Convert Local Variable to Field - `Alt + Shift + F`
+
 ## Configurations
 
 ### Modify trigger for `Content Assist`.
