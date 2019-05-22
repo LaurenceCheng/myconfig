@@ -15,3 +15,4 @@
 ## Learned From Others
 
 - Hotkey of Quick Access - `Ctrl + 3`
+- Hotkey of Quick Outline - `Ctrl + O`
