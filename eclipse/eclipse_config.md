@@ -6,6 +6,9 @@
 
 - Introduce Parameter - `Alt + Shift + P`
 - Convert Local Variable to Field - `Alt + Shift + F`
+- Rerun JUnit Test - `Ctrl + R, T`
+- Insert Line Above Current Line - `Ctrl + Enter` (Same as Visual Studio)
+- Insert Line Below Current Line - `Ctrl + Shift + Enter` (Same as Visual Studio)
 
 ## Useful Quick Assists
 
