@@ -29,3 +29,4 @@
 
 - Hotkey of Quick Access - `Ctrl + 3`
 - Hotkey of Quick Outline - `Ctrl + O`
+- Add a template for HashMap - `Map<${keyType}, ${valueType}> ${name:newName(java.util.Map)} = new HashMap<${keyType}, ${valueType}>();${:import(java.util.Map, java.util.HashMap)}`
