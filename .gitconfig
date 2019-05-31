@@ -14,5 +14,7 @@
 	s = status
 	p = pull
 	br = branch -vv
+	d = diff
+	dc = diff --cached
 [push]
 	defualt = current
