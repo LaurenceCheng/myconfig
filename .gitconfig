@@ -17,4 +17,4 @@
 	d = diff
 	dc = diff --cached
 [push]
-	defualt = current
+	default = current
