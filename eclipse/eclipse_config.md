@@ -9,6 +9,13 @@
 - Rerun JUnit Test - `Ctrl + R, T`
 - Insert Line Above Current Line - `Ctrl + Enter` (Same as Visual Studio)
 - Insert Line Below Current Line - `Ctrl + Shift + Enter` (Same as Visual Studio)
+- Toggle Breakpoint - `F9` (Same as Visual Studio)
+- Terminate - `Shift + F5` (Same as Visual Studio)
+- Step Over - `F10` (Same as Visual Studio)
+- Step Into - `F11` (Same as Visual Studio)
+- Step Return - `Shift + F11` (Same as Visual Studio)
+- Resume - `F5` (Same as Visual Studio)
+- Run to Line - `Shift + F10` (Same as Visual Studio)                                                                                     
 
 ## Useful Quick Assists
 
