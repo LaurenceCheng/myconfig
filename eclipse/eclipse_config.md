@@ -14,7 +14,7 @@
 
 #### Navigation
 - Open Declaration - `Alt + G`
-- References in Workspace - `Ctrl + ``
+- References in Workspace - `Ctrl + ```
 
 #### Debug
 - Toggle Breakpoint - `F9` (Same as Visual Studio)
