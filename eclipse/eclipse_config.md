@@ -49,6 +49,6 @@
 - Hotkey of Quick Access - `Ctrl + 3`
 - Hotkey of Quick Outline - `Ctrl + O`
 - Hotkey of Open Resource (find file quickly) - `Ctrl + Shift + R`
-- Hotkey of Goto matching bracket - `Ctrl + Shift + P`
+- Hotkey of Go to Matching Bracket - `Ctrl + Shift + P`
 - Add a template for HashMap - `Map<${keyType}, ${valueType}> ${name:newName(java.util.Map)} = new HashMap<${keyType}, ${valueType}>();${:import(java.util.Map, java.util.HashMap)}`
 - Hit `Enter` in string literal can break string with `+` operator. - "abcde" -> "abc" + "de"
