@@ -7,6 +7,7 @@
 	co = checkout
 	sta = stash
 	cm = commit
+	rb = rebase
 	alias = config --global --get-regexp alias
 	updateSubmodule = submodule foreach --recursive git submodule update
 	st = stash
