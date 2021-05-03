@@ -52,12 +52,16 @@ alias ll='ls -al'
 alias cl='clear'
 
 alias g='git'
+source /usr/share/bash-completion/completions/git
+complete -o default -o nospace -F _git g
+
 alias gs='git ss'
 alias gss='git ss'
 
 alias gitsync='branch=$(git branch | sed -n -e "s/^\* \(.*\)/\1/p");git stash;git co integration;git p -r;git co $branch;git sta pop;'
 
 # docker
+alias start_docker='sudo systemctl start docker'
 alias run_slsdocker='sudo docker run --rm --name sls -it -v $(pwd):/usr/src/project -v ~/.aws:/root/.aws node:12.16.1 bash'
 alias slsdocker='sudo docker attach sls'
 
