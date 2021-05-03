@@ -8,7 +8,9 @@
 	cob = checkout -b
 	sta = stash
 	cm = commit
+	cmm = commit -m
 	rb = rebase
+	rbi = rebase -i
 	rbc = rebase --continue
 	alias = config --global --get-regexp alias
 	updateSubmodule = submodule foreach --recursive git submodule update
