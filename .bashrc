@@ -2,6 +2,7 @@
 PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 export PATH
 
+            RED="\[\033[01;31m\]"
           GREEN="\[\033[01;32m\]"
          YELLOW="\[\033[01;33m\]"
            BLUE="\[\033[01;34m\]"
@@ -23,6 +24,11 @@ function parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
+function gh_pr() {
+    number=$(gh pr status --jq ".currentBranch.number" --json number 2> /dev/null)
+    [ -z "$number" ] || echo "(PR-$number)"
+}
+
 # Set the full bash prompt.
 function set_bash_prompt () {
   # Set the PROMPT_SYMBOL variable. We do this first so we don't lose the
@@ -40,9 +46,10 @@ function set_bash_prompt () {
 #${PYTHON_VIRTUALENV}${GREEN}\u@\h${COLOR_NONE}:${YELLOW}\w${COLOR_NONE}${BRANCH}
 #${PROMPT_SYMBOL} "
 
-PS1="${PYTHON_VIRTUALENV}${debian_chroot:+($debian_chroot)}${GREEN}\u@\h${COLOR_NONE}:${YELLOW}\w${CYAN} $(parse_git_branch)${COLOR_NONE}\n$ "
+PS1="${PYTHON_VIRTUALENV}${debian_chroot:+($debian_chroot)}${GREEN}\u@\h${COLOR_NONE}:${YELLOW}\w${CYAN} $(parse_git_branch)${RED}$(gh_pr)${COLOR_NONE}\n$ "
 }
 
+PROMPT_COMMAND=set_bash_prompt
 
 alias bashrc='vim ~/.bashrc'
 alias reload='source ~/.bashrc'
@@ -59,6 +66,7 @@ alias gs='git ss'
 alias gss='git ss'
 
 alias gitsync='branch=$(git branch | sed -n -e "s/^\* \(.*\)/\1/p");git stash;git co integration;git p -r;git co $branch;git sta pop;'
+alias gitrmbr='branch=$(git branch | sed -n -e "s/^\* \(.*\)/\1/p");git co integration;git br -D $branch;'
 
 # docker
 alias start_docker='sudo systemctl start docker'
