@@ -1,0 +1,6 @@
+aliases:
+    pco: pr checkout
+    ps: pr status
+    pl: pr list
+    pcr: pr create
+    pcd: pr create -d
