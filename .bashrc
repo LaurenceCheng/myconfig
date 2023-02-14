@@ -76,8 +76,12 @@ alias ll='ls -al'
 alias cl='clear'
 
 alias g='git'
-source /usr/share/bash-completion/completions/git
-complete -o default -o nospace -F _git g
+# -- CentOS --
+# source /usr/share/bash-completion/completions/git
+# complete -o default -o nospace -F _git g
+# -- Ubuntu 22.04 --
+source /etc/bash_completion.d/git-prompt
+__git_complete g __git_main
 
 alias gs='git ss'
 alias gss='git ss'
