@@ -76,11 +76,12 @@ alias ll='ls -al'
 alias cl='clear'
 
 alias g='git'
-# -- CentOS --
-# source /usr/share/bash-completion/completions/git
-# complete -o default -o nospace -F _git g
-# -- Ubuntu 22.04 --
-source /etc/bash_completion.d/git-prompt
+# Execute the following commands first:
+# wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+# mv git-completion.bash .git-completion.bash
+if [ -f ~/.git-completion.bash ]; then
+   source ~/.git-completion.bash
+fi
 __git_complete g __git_main
 
 alias gs='git ss'
