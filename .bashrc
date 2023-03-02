@@ -62,7 +62,7 @@ function set_bash_prompt () {
 #${PYTHON_VIRTUALENV}${GREEN}\u@\h${COLOR_NONE}:${YELLOW}\w${COLOR_NONE}${BRANCH}
 #${PROMPT_SYMBOL} "
 
-PS1="${PYTHON_VIRTUALENV}${debian_chroot:+($debian_chroot)}${GREEN}\u@\h${COLOR_NONE}:${YELLOW}\w${CYAN} $(parse_git_branch)${RED}$(glab_pr_number)${PURPLE}$(glab_pr_state)${COLOR_NONE}\n$ "
+PS1="${PYTHON_VIRTUALENV}${debian_chroot:+($debian_chroot)}${GREEN}\u@\h${COLOR_NONE}:${YELLOW}\w${CYAN} $(parse_git_branch)${RED}$(gh_pr_number)${PURPLE}$(gh_pr_state)${COLOR_NONE}\n$ "
 }
 
 PROMPT_COMMAND=set_bash_prompt
