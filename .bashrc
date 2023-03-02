@@ -76,11 +76,13 @@ alias ll='ls -al'
 alias cl='clear'
 
 alias g='git'
-# Execute the following commands first:
-# wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
-# mv git-completion.bash .git-completion.bash
+alias g='git'
 if [ -f ~/.git-completion.bash ]; then
-   source ~/.git-completion.bash
+    source ~/.git-completion.bash
+else
+    wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+    mv git-completion.bash .git-completion.bash
+    source ~/.git-completion.bash
 fi
 __git_complete g __git_main
 
