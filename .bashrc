@@ -76,7 +76,6 @@ alias ll='ls -al'
 alias cl='clear'
 
 alias g='git'
-alias g='git'
 if [ -f ~/.git-completion.bash ]; then
     source ~/.git-completion.bash
 else
