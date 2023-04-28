@@ -69,13 +69,13 @@ PROMPT_COMMAND=set_bash_prompt
 
 # User specific aliases and functions
 alias bashrc='vim ~/.bashrc'
+alias bash_aliases='vim ~/.bash_aliases'
 alias reload='source ~/.bashrc'
 
 alias ..='cd ..'
 alias ll='ls -al'
 alias cl='clear'
 
-alias g='git'
 alias g='git'
 if [ -f ~/.git-completion.bash ]; then
     source ~/.git-completion.bash
@@ -89,8 +89,22 @@ __git_complete g __git_main
 alias gs='git ss'
 alias gss='git ss'
 
-alias gitsync='branch=$(git branch | sed -n -e "s/^\* \(.*\)/\1/p");git stash;git co integration;git p -r;git co $branch;git sta pop;'
-alias gitrmbr='branch=$(git branch | sed -n -e "s/^\* \(.*\)/\1/p");git co integration;git br -D $branch;'
+# Might need to run 'unalias gitsync' first
+function gitsync() {
+  branch=$(git branch | sed -n -e "s/^\* \(.*\)/\1/p")
+  git stash
+  git co ${1:-integration}
+  git p -r
+  git co $branch
+  git sta pop
+}
+
+# Might need to run 'unalias gitrmbr' first
+function gitrmbr() {
+  branch=$(git branch | sed -n -e "s/^\* \(.*\)/\1/p")
+  git co ${1:-integration}
+  git br -D $branch
+}
 
 alias tmp_http_server='originpath=$(pwd);cd /data/sample_files/;(python -m RangeHTTPServer 8080 &> /dev/null &);cd $originpath;'
 
