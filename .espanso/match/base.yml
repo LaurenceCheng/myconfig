@@ -1,0 +1,77 @@
+# espanso match file
+
+# For a complete introduction, visit the official docs at: https://espanso.org/docs/
+
+# You can use this file to define the base matches (aka snippets)
+# that will be available in every application when using espanso.
+
+# Matches are substitution rules: when you type the "trigger" string
+# it gets replaced by the "replace" string.
+matches:
+  # Simple text replacement
+  - trigger: ":espanso"
+    replace: "Hi there!"
+
+  # NOTE: espanso uses YAML to define matches, so pay attention to the indentation!
+
+  # But matches can also be dynamic:
+
+  # Print the current date
+  - trigger: ":date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%Y/%m/%d"
+  # Print the current time
+  - trigger: ":now"
+    replace: "{{now}}"
+    vars:
+      - name: now
+        type: date
+        params:
+          format: "%H:%M"
+
+  # Test choice
+  - trigger: ":quote"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: choice
+        params:
+          values:
+            - "Every moment is a fresh beginning."
+            - "Everything you can imagine is real."
+            - "Whatever you do, do it well."
+
+  # Print the output of a shell command
+  - trigger: ":shell"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "echo 'Hello from your shell'"
+
+  # And much more! For more information, visit the docs: https://espanso.org/docs/
+
+  # Work sections
+  ## laurence_cheng
+  - trigger: ":lau"
+    replace: "laurence_cheng"
+
+  ## trend email
+  - trigger: ":trend"
+    replace: "laurence_cheng@trendmicro.com"
+
+  ## activate python venv
+  - trigger: ":venv"
+    replace: "source env/bin/activate"
+
+
+  # ChatGPT prompts
+  ## English translator
+  - trigger: ":chatgpt_en"
+    replace: >
+              I want you to act as an English translator, spelling corrector and improver. I will speak to you in any language and you will detect the language, translate it and answer in the corrected and improved version of my text, in English. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. Keep the meaning same, but make them more literary. I want you to only reply the correction, the improvements and nothing else, do not write explanations. My first sentence is "istanbulu cok seviyom burada olmak cok guzel"
