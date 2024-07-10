@@ -2,6 +2,7 @@
 PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 export PATH
 
+      DARK_GRAY="\[\033[01;30m\]"
             RED="\[\033[01;31m\]"
           GREEN="\[\033[01;32m\]"
          YELLOW="\[\033[01;33m\]"
@@ -45,6 +46,10 @@ function glab_pr_state() {
     [ -z "$state" ] || echo " - $state"
 }
 
+function get_datetime() {
+    echo "${DARK_GRAY}[\D{%Y-%m-%d %H:%M:%S}]${COLOR_NONE}"
+}
+
 # Set the full bash prompt.
 function set_bash_prompt () {
   # Set the PROMPT_SYMBOL variable. We do this first so we don't lose the
@@ -62,7 +67,7 @@ function set_bash_prompt () {
 #${PYTHON_VIRTUALENV}${GREEN}\u@\h${COLOR_NONE}:${YELLOW}\w${COLOR_NONE}${BRANCH}
 #${PROMPT_SYMBOL} "
 
-PS1="${PYTHON_VIRTUALENV}${debian_chroot:+($debian_chroot)}${GREEN}\u@\h${COLOR_NONE}:${YELLOW}\w${CYAN} $(parse_git_branch)${RED}$(gh_pr_number)${PURPLE}$(gh_pr_state)${COLOR_NONE}\n$ "
+PS1="$(get_datetime)${PYTHON_VIRTUALENV}${debian_chroot:+($debian_chroot)}${GREEN}\u@\h${COLOR_NONE}:${YELLOW}\w${CYAN} $(parse_git_branch)${RED}$(gh_pr_number)${PURPLE}$(gh_pr_state)${COLOR_NONE}\n$ "
 }
 
 PROMPT_COMMAND=set_bash_prompt
@@ -84,6 +89,7 @@ else
     mv ~/git-completion.bash ~/.git-completion.bash
     source ~/.git-completion.bash
 fi
+source /usr/share/bash-completion/completions/git
 __git_complete g __git_main
 
 alias gs='git ss'
@@ -115,6 +121,16 @@ alias slsdocker='sudo docker attach sls'
 
 alias remove_EOF_newline='truncate -s -1'
 
+alias dsa_stop='service ds_agent stop'
+alias dsa_restart='service ds_agent restart'
+
+alias work='cd ~/work'
+alias dsa_folder='cd /opt/ds_agent'
+alias dsa_logs='cd /var/opt/ds_agent/diag'
+alias dsa_v1_plugin='cd ~/work/dsa-v1-plugin'
+alias dsa_core='cd ~/work/dsa-core'
+alias dsa_relay_plugin='cd ~/work/dsa-relay-plugin'
+alias dsa_hub_plugin='cd ~/work/dsa-hub-plugin'
 alias plugin='cd /e/work/VAST2/plugins'
 alias qml='cd /e/work/VAST2/VAST2'
 alias uat='cd /e/work/VAST2/UAT'
