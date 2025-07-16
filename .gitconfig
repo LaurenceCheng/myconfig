@@ -17,6 +17,7 @@
 	st = stash
 	diffc = diff --cached
 	s = status
+	sn = show --name-only
 	p = pull
 	br = branch -vv
 	d = diff
